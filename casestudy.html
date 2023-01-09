@@ -11,13 +11,28 @@
 <body>
     <form>
 <lable for="number">ID</lable><br>
-<input id="number" name="number" type="number" ><br>
+<input id="id" name="number" type="number" ><br>
 <lable for="name">Họ và tên</lable><br>
 <input id="name" name="name" type="text" ><br>
 <label for="email">Nhập email của bạn</label><br>
 <input id="name" name="email" type="text"><br><br>
-
-<input type="submit" name="submit" value="adđ"><br>
         </form>
+        <button  id="submit" onclick="add()">Submit</button>
+        
 </body>
-</html>
+<script>
+    let data=[];
+    function add(){
+        let itemid=document.getElementById("id").value;
+        let itemname=document.getElementById("name").value;
+        let itememail=document.getElementById("email").value;
+        
+            var item={
+                id:itemid,
+                name:itemname,
+                email:itememail,
+                
+            } ;
+        }
+           </script>
+           </html>
