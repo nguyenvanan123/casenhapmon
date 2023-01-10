@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseStudy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="casenhapmon.css">
+</head>
+
+<body>
+   
+    <form>
+<lable for="number">ID</lable><br>
+<input id="id" name="number" type="number" ><br>
+<lable for="name">Họ và tên</lable><br>
+<input id="name" name="name" type="text" ><br>
+<label for="email">Nhập email của bạn</label><br>
+<input id="name" name="email" type="text"><br><br>
+        </form>
+        <button  id="submit" onclick="add()">Submit</button>
+
+    
+ <script>
+    let data=[];
+    function add(){
+        let itemid=document.getElementById("id").value; // trả về phần tử có thuộc tính id đc chỉ định
+        let itemname=document.getElementById("name").value;
+        let itememail=document.getElementById("email").value;
+        
+            var item={ // tham số truyền vào từ ôn input
+                id:itemid,
+                name:itemname,
+                email:itememail,
+                class:itemclass
+            } ;
+           let index = data.findIndex((c)=>c.id==item.id) // index đóng vai trò trung gian truyền item vào data
+           if (index>=0) { //index - chỉ số của phần tử hiện tại. 
+            //Hàm findIndex sẽ lần lượt sử dụng các phần tử của mảng để thực hiện 
+            //hàm kiểm tra cho đến khi có giá trị thỏa mãn và hàm kiểm tra trả về true.
+             data.splice(index,1,item) //splice để phân tách không dính liền vào nhau
+           }else{ //Dùng cho việc thêm, xóa phần tử trong mảng
+            data.push(item)// item là 1 khoảng thông tin dữ liệu trong 1 cái j đó
+           } // là mục
+           render(); //hiển thị đồng thời xóa khỏi chỗ nhập
+           clear();
+           console.log(data)
+        }
+        
+    
+    
+            
+           
+      
+ </script>
+</body>
+</html>
